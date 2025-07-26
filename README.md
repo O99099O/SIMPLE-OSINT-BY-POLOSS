@@ -1,4 +1,4 @@
-# 👣 OSINT-MASTER v2.0 | SUPER AKURAT by polosscool
+# OSINT v2.0 | by poloss
 
 **OSINT-MASTER** adalah tools investigasi digital (OSINT) akurat dan ringan berbasis Python. Cocok digunakan untuk:
 - Investigasi siber
