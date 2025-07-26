@@ -1,0 +1,66 @@
+Berikut penjelasan lengkap tentang **input & output** dari fungsi `fitur2_username_check(nama)`:
+
+---
+
+## 📥 INPUT YANG DIPERLUKAN
+
+```python
+fitur2_username_check(nama)
+```
+
+* **`nama` (tipe: string)**
+  Ini adalah **username target** yang ingin kamu cari di sosial media.
+
+### ✅ Contoh input:
+
+```python
+fitur2_username_check("asep")
+```
+
+> Maka akan dicek:
+>
+> * `https://facebook.com/asep`
+> * `https://twitter.com/asep`
+> * dan semua situs dalam list `sosial`
+
+---
+
+## 📤 OUTPUT YANG DIHASILKAN
+
+Fungsi ini **tidak mengembalikan nilai**, tapi akan langsung mencetak hasil pengecekan ke layar/terminal.
+
+### 3 Jenis output:
+
+| Status                  | Arti                                                            |
+| ----------------------- | --------------------------------------------------------------- |
+| ✅ `[AKTIF]`             | Username ditemukan (akun **ada dan aktif**)                     |
+| ❌ `[TIDAK ADA]`         | URL tidak ditemukan (username **tidak digunakan** di situs itu) |
+| ⚠️ `[?]` atau `[ERROR]` | Status kode aneh atau gagal konek (timeout, redirect, dll)      |
+
+---
+
+### 🔍 Contoh output nyata:
+
+Jika input `asep07`, maka output di terminal bisa:
+
+```
+[2] Pengecekan Username Sosial Media...
+[AKTIF] https://facebook.com/asep07
+[TIDAK ADA] https://instagram.com/asep07
+[?] https://github.com/asep07 [status: 403]
+[ERROR] https://vk.com/asep07
+```
+
+---
+
+## 🧾 RINGKASAN:
+
+| Elemen       | Deskripsi                                          |
+| ------------ | -------------------------------------------------- |
+| **Input**    | 1 string: username target (tanpa `@`)              |
+| **Output**   | Cetakan langsung ke terminal (status per platform) |
+| **Kegunaan** | OSINT, pengecekan jejak digital username           |
+
+---
+
+Jika ingin output-nya disimpan ke `.txt`, format JSON, atau ditambahkan ke log `main.py`, beri perintah saja — siap kuintegrasikan.

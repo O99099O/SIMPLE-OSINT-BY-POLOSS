@@ -1,0 +1,126 @@
+Berikut penjelasan **cara kerja script `fitur2_username_check(nama)`** dari **nol (0)**:
+
+---
+
+## 🧠 TUJUAN
+
+Untuk **mengecek apakah username tertentu (`nama`) sudah digunakan** di banyak platform sosial media dan situs komunitas lain.
+
+---
+
+## 🛠️ STRUKTUR KERJA
+
+### 1. **Definisi Fungsi**
+
+```python
+def fitur2_username_check(nama):
+```
+
+Fungsi menerima 1 argumen `nama`, misal: `"asep07"` → akan dicek di semua platform.
+
+---
+
+### 2. **Menampilkan Header**
+
+```python
+print(Fore.LIGHTGREEN_EX + "[2] Pengecekan Username Sosial Media...")
+```
+
+Menampilkan info awal ke user dengan warna hijau (pakai modul `colorama`).
+
+---
+
+### 3. **List Platform**
+
+```python
+sosial = [
+    "https://facebook.com",
+    "https://twitter.com",
+    ...
+    "https://venmo.com"
+]
+```
+
+Berisi **51+ URL platform** tempat akun user bisa terdaftar.
+Format URL sudah diatur supaya cocok dengan struktur user masing-masing platform.
+
+Contoh:
+
+* `https://instagram.com/asep07`
+* `https://github.com/asep07`
+* `https://tiktok.com/@asep07`
+
+---
+
+### 4. **Looping Setiap Platform**
+
+```python
+for site in sosial:
+    url = f"{site}/{nama}"
+```
+
+Script akan:
+
+* Gabungkan URL + `nama` → membentuk full URL akun
+* Contoh: `https://github.com/asep07`
+
+---
+
+### 5. **Request ke URL**
+
+```python
+res = requests.get(url, timeout=6)
+```
+
+Melakukan **permintaan HTTP GET** ke URL tersebut, dengan timeout 6 detik.
+
+---
+
+### 6. **Cek Status Ketersediaan**
+
+```python
+if res.status_code == 200:
+    print(Fore.GREEN + f"[AKTIF] {url}")
+elif res.status_code == 404:
+    print(Fore.RED + f"[TIDAK ADA] {url}")
+else:
+    print(Fore.YELLOW + f"[?] {url} [status: {res.status_code}]")
+```
+
+* **200 = username aktif** di platform itu
+* **404 = tidak ditemukan (belum digunakan)**
+* **Lainnya** bisa 403, 500, atau status aneh
+
+---
+
+### 7. **Tangani Error**
+
+```python
+except:
+    print(Fore.RED + f"[ERROR] {url}")
+```
+
+Jika ada error jaringan atau domain, script tetap jalan dan hanya menampilkan `[ERROR]`.
+
+---
+
+## 🔍 OUTPUT CONTOH:
+
+Misal kamu input: `asep`
+
+```
+[2] Pengecekan Username Sosial Media...
+[AKTIF] https://facebook.com/asep
+[TIDAK ADA] https://twitter.com/asep
+[?] https://github.com/asep [status: 403]
+[ERROR] https://imgur.com/user/asep
+```
+
+---
+
+## ✅ KELEBIHAN FITUR
+
+* Tidak butuh API
+* Mendeteksi akun username aktif secara cepat
+* Bisa langsung digunakan untuk **OSINT**, social profiling, atau threat intelligence
+

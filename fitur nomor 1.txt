@@ -1,0 +1,88 @@
+### 🔧 1. FUNGSI UTAMA
+
+```python
+def fitur1_google_dorking(nama):
+```
+
+Ini mendefinisikan sebuah **fungsi Python** bernama `fitur1_google_dorking`, yang menerima 1 argumen: `nama`.
+Contoh: kalau user input `asep`, maka seluruh pencarian akan fokus ke `"asep"`.
+
+---
+
+### 🟢 2. PRINT HEADER / NOTIFIKASI
+
+```python
+print(Fore.LIGHTGREEN_EX + "[1] Google Dorking...")
+```
+
+Menampilkan pesan di terminal bahwa fungsi **Google Dorking** sedang dijalankan.
+`Fore.LIGHTGREEN_EX` digunakan agar teks berwarna hijau muda. (Perlu `colorama`)
+
+---
+
+### 🗂️ 3. KUMPULAN DORK (GOOGLE QUERY)
+
+```python
+dorks = [
+    f'site:facebook.com "{nama}"',
+    ...
+]
+```
+
+Membuat list/daftar berisi **dork query** Google Search — total sekitar 50+ baris.
+Semua query menyisipkan nama target (`{nama}`), contoh:
+
+```python
+f'site:github.com "{nama}"' 
+→ jika `nama = asep`, hasilnya jadi: site:github.com "asep"
+```
+
+Gunanya: mencari jejak digital target `asep` di berbagai platform/web (Facebook, Twitter, Reddit, Pastebin, GitHub, dll).
+
+---
+
+### 📡 4. LOOPING SEMUA DORK
+
+```python
+for dork in dorks:
+    print(Fore.YELLOW + f"[DORK] {dork}")
+```
+
+Script ini akan **melintasi satu per satu** dork dari list `dorks`, dan mencetak ke layar:
+
+* Warna kuning (`Fore.YELLOW`)
+* Prefix `[DORK]`
+* Isi dork
+
+Contoh output:
+
+```
+[DORK] site:facebook.com "asep"
+[DORK] "asep" filetype:pdf OR filetype:docx
+[DORK] "asep" site:pastebin.com
+```
+
+---
+
+### 🎯 TUJUAN UTAMA
+
+Fungsi ini **tidak otomatis buka Google**.
+Tapi memberi **list dork siap copy-paste** ke Google untuk OSINT manual atau lanjutan.
+Ini sangat berguna untuk:
+
+* **Mencari bocoran data**
+* **Cek akun sosial media**
+* **Cari file dokumen berisi nama target**
+* **Cek konfigurasi atau backup bocor**
+* **Cari halaman login/admin terdeteksi nama target**
+
+---
+
+### ✅ KESIMPULAN
+
+| Langkah             | Fungsi                                      |
+| ------------------- | ------------------------------------------- |
+| `def`               | Membuat fungsi dengan nama target           |
+| `print()`           | Notifikasi ke user                          |
+| `dorks = [...]`     | Membuat list dork otomatis berdasarkan nama |
+| `for dork in dorks` | Menampilkan semua dork satu per satu        |
