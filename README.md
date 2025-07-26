@@ -35,7 +35,7 @@ Dirancang untuk **akurat, cepat, dan stealth**, versi ini menyempurnakan v1.0 de
 - `requests`
 - `colorama`
 
-### 🔧 Install dependencies
+### 🔧 Cara install termux,linux dll
 ```bash
-git clone https://github.com/O99099O/SIMPLE-OSINT-BY-POLOSS.git
-cd SIMPLE-OSINT-BY-POLOSS
+git clone https://github.com/O99099O/SIMPLE-OSINT-BY-POLOSS.git 
+python3 main.py (nama target)
