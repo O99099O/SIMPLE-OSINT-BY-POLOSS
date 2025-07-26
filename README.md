@@ -37,4 +37,5 @@ Dirancang untuk **akurat, cepat, dan stealth**, versi ini menyempurnakan v1.0 de
 
 ### 🔧 Install dependencies
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/O99099O/SIMPLE-OSINT-BY-POLOSS.git
+cd SIMPLE-OSINT-BY-POLOSS
