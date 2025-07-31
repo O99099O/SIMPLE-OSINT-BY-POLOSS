@@ -1,4 +1,4 @@
-#========= OSINT-MASTER (v2.0 SUPER ACCURATE) by polosscool ==================#
+#========= by poloss ==================#
 import os, sys, requests, re, random, time
 import requests
 from colorama import Fore, init
@@ -273,7 +273,7 @@ def fitur10_last_online_guess(nama):
     print(Fore.CYAN + f"📆 {nama.replace('+',' ')} kemungkinan aktif terakhir {hari} hari lalu")
 
 #====================== EKSEKUSI FINAL =======================================#
-fitur1_google_dorking(target_name)
+fitur1_google_dorking(target_name) #menjalankan fitur
 fitur2_username_check(target_name)
 fitur3_email_guess(target_name)
 fitur4_tanggal_domain(target_name)
